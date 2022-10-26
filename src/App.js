@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<UserLayout />}>
               <Route index element={<Home />} />
-              <Route path="search/user=:id" element={<Results />} />
+              <Route path="search/user:id" element={<Results />} />
             </Route>
           </Routes>
         </ResultContext.Provider>

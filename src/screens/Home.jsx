@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useContext } from "react";
+import { useRef, useEffect, useContext } from "react";
 import axios from "axios";
 import { SearchContext } from "../service/searchContext";
 import ButtonDefault from "../components/buttons/ButtonDefault";
@@ -8,7 +8,7 @@ const baseURL = `https://api.github.com/users/timmywheels/repos`;
 const Home = () => {
   const handleSearch = useAxios();
   const inputSearch = useRef(null);
-  const { setSearch, search } = useContext(SearchContext);
+  const { setSearch } = useContext(SearchContext);
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {

@@ -11,7 +11,7 @@ const NavbarTop = () => {
           class="d-inline-block align-top"
           alt=""
         />
-        Bootstrap
+        Github API
       </a>
     </nav>
   );
