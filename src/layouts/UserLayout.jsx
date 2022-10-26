@@ -1,11 +1,14 @@
 import { Outlet } from "react-router-dom";
+import { Container, Row, Col } from "bootstrap-4-react";
 
 const UserLayout = () => {
   return (
     <>
-      <div className="">
-        <Outlet />
-      </div>
+      <Container>
+        <Row>
+          <Outlet />
+        </Row>
+      </Container>
     </>
   );
 };

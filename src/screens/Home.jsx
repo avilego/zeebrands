@@ -1,7 +1,7 @@
-import React from "react";
+import { Container, Row, Col } from "bootstrap-4-react";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <Container>Home</Container>;
 };
 
 export default Home;
