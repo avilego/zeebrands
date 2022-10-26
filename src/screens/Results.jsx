@@ -1,13 +1,24 @@
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { ResultContext } from "../service/resultContext";
+import { SearchContext } from "../service/searchContext";
 
 const Results = () => {
+  const navigate = useNavigate();
   const { result } = useContext(ResultContext);
+  const { search } = useContext(SearchContext);
 
-  const handleClone = () => {};
+  useEffect(() => {
+    if (!search) navigate("/");
+  }, [search]);
+
+  const handleClone = (clone) => {
+    navigator.clipboard.writeText(clone);
+  };
 
   return (
     <>
+      <p className="h3">{search}</p>
       {result &&
         result.map((item) => (
           <div class="card w-75 mx-auto my-2">
@@ -19,13 +30,13 @@ const Results = () => {
                 <p
                   href="#"
                   class="card-link"
-                  onClick={() => navigator.clipboard.writeText(item.clone_url)}
+                  onClick={handleClone(item.clone_url)}
                 >
                   clonar
                 </p>
-                <a href="#" class="card-link">
+                <p href="#" class="card-link">
                   Another link
-                </a>
+                </p>
               </div>
             </div>
           </div>

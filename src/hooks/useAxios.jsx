@@ -16,10 +16,13 @@ const useAxios = () => {
         const result = res.data;
         console.log(result);
         setResult(result);
-        setSearch("");
+
         navigate(`search/user=${search}`);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setSearch("");
+      });
   };
 
   return fetchData;
