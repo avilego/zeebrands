@@ -5,9 +5,8 @@ const InputText = (props) => {
         type="text"
         class="form-control"
         placeholder={props.placeholder}
-        aria-describedby="basic-addon1"
-        value={props.value}
         onChange={props.onChange}
+        ref={props.ref}
       />
     </div>
   );
