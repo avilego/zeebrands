@@ -1,10 +1,19 @@
-import { Container, Row, Col } from "bootstrap-4-react";
+import InputText from "../components/inputs/InputText";
 
 const Home = () => {
   return (
-    <Container w="100" px="0">
-      Home
-    </Container>
+    <div className="container">
+      <div className="row">
+        <div className="col mt-3 text-center">
+          <p class="h3">Search users and repositories</p>
+        </div>
+      </div>
+      <div className="row mt-5">
+        <div className="col-8 mx-auto">
+          <InputText placeholder="User" />
+        </div>
+      </div>
+    </div>
   );
 };
 

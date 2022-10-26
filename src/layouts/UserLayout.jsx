@@ -1,18 +1,17 @@
 import { Outlet } from "react-router-dom";
-import { Container, Row, Col } from "bootstrap-4-react";
-import NavbarTop from "../components/NavbarTop";
+import NavbarTop from "../components/navigation/NavbarTop";
 
 const UserLayout = () => {
   return (
     <>
-      <Container px="0">
-        <Row mx="0">
+      <div className="container-fluid">
+        <div className="row">
           <NavbarTop />
-        </Row>
-        <Row>
+        </div>
+        <div className="row">
           <Outlet />
-        </Row>
-      </Container>
+        </div>
+      </div>
     </>
   );
 };
