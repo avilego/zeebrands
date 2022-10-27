@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/zeebrands/static/css/main.e6c13ad2.css",
+    "main.js": "/zeebrands/static/js/main.88370497.js",
+    "static/media/logo2.png": "/zeebrands/static/media/logo2.f146f3716d8e078e628a.png",
+    "index.html": "/zeebrands/index.html",
+    "main.e6c13ad2.css.map": "/zeebrands/static/css/main.e6c13ad2.css.map",
+    "main.88370497.js.map": "/zeebrands/static/js/main.88370497.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.88370497.js"
+  ]
+}
