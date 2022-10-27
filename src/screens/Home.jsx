@@ -1,4 +1,4 @@
-import { useRef, useEffect, useContext } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import axios from "axios";
 import { SearchContext } from "../service/searchContext";
 import ButtonDefault from "../components/buttons/ButtonDefault";
@@ -9,6 +9,7 @@ const Home = () => {
   const handleSearch = useAxios();
   const inputSearch = useRef(null);
   const { setSearch } = useContext(SearchContext);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {
@@ -22,6 +23,7 @@ const Home = () => {
   };
 
   const handleSubmit = (event) => {
+    setLoading(true);
     event.preventDefault();
     handleSearch();
   };
@@ -43,7 +45,23 @@ const Home = () => {
               onChange={onChangeTextSearch}
               ref={inputSearch}
             />
-            <ButtonDefault text="Search" type="submit" />
+
+            <div className="w-50 mx-auto mt-3">
+              {loading ? (
+                <div
+                  className="spinner-border text-primary ml-auto"
+                  role="status"
+                >
+                  <span className="sr-only">Loading...</span>
+                </div>
+              ) : (
+                <ButtonDefault
+                  text="Search"
+                  type="submit"
+                  className="w-50 mx-auto"
+                />
+              )}
+            </div>
           </form>
         </div>
       </div>
